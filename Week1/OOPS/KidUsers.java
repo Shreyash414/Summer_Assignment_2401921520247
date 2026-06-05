@@ -4,16 +4,29 @@ public class KidUsers implements LibraryUser {
 
     int age;
     String bookType;
+    boolean valid=false;
     @Override
     public void registerAccount(int Age) {
         if (Age<12){
             System.out.println("You have successfully registered under kids account");
+            valid=true;
+        }
+        else{
+            System.out.println("Sorry, Age must be less than 12 to register as a kid");
+
         }
 
     }
 
     @Override
     public void requestBook(String BookType) {
+        if(BookType.equals("Kid") || BookType.equals("kid")){
+            System.out.println("Book Issued successfully, please return the book within 10 days");
+        }
+        else{
+            System.out.println("Oops, you are allowed to take only kids books");
+            System.out.println(BookType);
+        }
 
     }
 }
