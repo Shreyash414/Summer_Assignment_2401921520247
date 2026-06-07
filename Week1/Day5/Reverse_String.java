@@ -1,0 +1,16 @@
+package Week1.Day5;
+
+public class Reverse_String {
+    public void reverseString(char[] s) {
+        int len = s.length;
+        int i = 0;
+        int j = len - 1;
+        while (i <= j) {
+            char temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            i++;
+            j--;
+        }
+    }
+}
